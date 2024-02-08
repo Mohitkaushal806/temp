@@ -1,0 +1,504 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+// @use '@angular/material'as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+// @include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// $ng-primary: mat.define-palette(mat.$indigo-palette);
+// $ng-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+// $ng-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+// $ng-theme: mat.define-light-theme((
+//   color: (
+//     primary: $ng-primary,
+//     accent: $ng-accent,
+//     warn: $ng-warn,
+//   )
+// ));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+// @include mat.all-component-themes($ng-theme);
+
+// If you want to override variables do it here
+// 
+
+// Import styles
+@import "~font-awesome/css/font-awesome.css";
+/*** IMPORTED FILE NOT FOUND ***/
+@import "~flag-icon-css/css/flag-icon.css";/*** --- ***/
+/*** IMPORTED FILE NOT FOUND ***/
+/*** IMPORTED FILE NOT FOUND ***/
+@import "~font-awesome/css/font-awesome.css";/*** --- ***//*** --- ***/
+/*** IMPORTED FILE NOT FOUND ***/
+@import "~primeng/resources/themes/saga-blue/theme.css";/*** --- ***/
+/*** IMPORTED FILE NOT FOUND ***/
+@import "~primeng/resources/primeng.min.css";/*** --- ***/
+/*** IMPORTED FILE NOT FOUND ***/
+@import "~primeflex/primeflex.css";/*** --- ***/
+/*** IMPORTED FILE NOT FOUND ***/
+@import "~primeicons/primeicons.css";/*** --- ***/
+/*** IMPORTED FILE NOT FOUND ***/
+@import "~bootstrap/dist/css/bootstrap.min.css";/*** --- ***/
+/*** IMPORTED FILE NOT FOUND ***/
+@import "~select2/dist/css/select2.min.css";
+
+@import url("https://cdn3.devexpress.com/jslib/22.1.4/css/dx.light.css");
+// If you want to add something do it here
+// 
+
+
+//  Custom css
+
+$color_header: #fd8309;
+$color_sidebar: black;
+$color_close_hover: #5c5c5c;
+$color_save_hover: #ce7318;
+
+body {
+  background-color: #EDEDF2 !important;
+}
+
+.datapopup-dailog{
+  max-width: 80%;
+  min-width: 40%;
+  .p-datatable-wrapper{
+    overflow-x: auto;
+  }
+}
+
+.modal-backdrop{
+  z-index: 1000 !important;
+}
+
+//  modal common style
+.modal-header {
+  padding: 5px 15px;
+  text-transform: capitalize;
+  align-items: center;
+  .modal-title{
+    font-size: 20px!important;
+  }
+  button.close {
+    padding: 11px 15px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 0 5px 0 0;
+      transition: all linear 0.3s;
+    }
+  }
+}
+
+
+:host ::ng-deep {
+  //   ol.breadcrumb{
+  //   margin-bottom: 0 !important;
+  // }
+
+  // tabset.tab-container {
+  //   .nav-tabs .nav-link {
+  //   border-top-left-radius: 0;
+  //   border-top-right-radius: 0;
+  //   }
+  // }
+}
+
+
+.sidebar .nav-dropdown-items .nav-item {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+// rahul css
+
+.app, app-dashboard, app-root{
+  min-height: unset;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cacaca;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b5b5b5;
+}
+
+// header css start here
+app-header .navbar-brand{
+  background-color: white!important;
+  width: unset!important;
+  height: unset!important;
+}
+app-header .navbar-brand img{
+  margin: 0px 15px;
+  width: 80px;
+  margin-top: -6px;
+}
+.brand-minimized .app-header .navbar-brand .navbar-brand-minimized {
+  width: 26px;
+}
+.navbar{
+  justify-content: unset;
+}
+app-header .nav-item{
+  margin: 0px 8px!important;
+  position: relative;
+}
+app-header .nav-item i{
+  font-size: 20px;
+}
+app-header .nav-item span{
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  height: 14px;
+  width: 14px;
+  line-height: 14px;
+  color: white;
+  font-size: 10px;
+  border-radius: 50%;
+}
+// header css end here
+
+// sidebar css start here
+.sidebar{
+  background-color: $color_sidebar;
+}
+.sidebar .nav-title{
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 12px 15px;
+  border-bottom: 1px solid #393838;
+  color: white;
+}
+.sidebar .nav-divider{
+  height: 0px;
+  background-color: #393838!important;
+}
+// sidebar css end here
+
+// footer css end here
+body.sidebar-lg-show .add-table-graph{
+  width: 87%;
+  background-color: #363636;
+  padding: 8px;
+}
+body.sidebar-lg-show .add-table-graph button{
+  height: unset;
+  line-height: unset;
+  padding: 2px 5px;
+  font-size: 12px;
+  background-color: $color_header!important;
+  border: 1px solid $color_header;
+}
+// footer css end here
+
+// modal css start here
+.modal-header{
+  background-color: $color_sidebar;
+}
+.modal-header h4{
+  color: white;
+}
+.modal-header .close{
+  color: white;
+  opacity: 1!important;
+}
+// modal css end here
+
+// main css start here
+.main{
+  height: calc(100vh - 55px);
+}
+.main .breadcrumb{
+  background-color: $color_header;
+  padding: 8px 15px;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+.main .breadcrumb li a{
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+.main .container-fluid {
+  height: calc(100vh - 102px);
+  padding: 0px;
+}
+.main_content_sec .row{
+  margin-right: 0;
+  margin-left: 0;
+}
+// main css end here
+
+// table section css start
+.card{
+  margin-bottom: 0;
+  border: none;
+}
+.card p-table{
+  height: 73vh;
+  overflow-y: auto;
+  box-shadow: 1px 1px 10px #cbcbcb;
+}
+
+.p-datatable table{
+  width: 100%;
+  table-layout: auto!important;
+}
+.p-column-filter{
+  width: 100%;
+}
+
+.p-datatable .p-datatable-thead > tr > th{
+  font-size: 13px;
+  padding: 5px;
+  background-color: #000000;
+  border: 1px solid #4c4c4c;
+  white-space: nowrap;
+  color: white;
+}
+.p-datatable .p-datatable-tbody > tr > td{
+  font-size: 12px;
+  padding: 2px 5px;
+  border: 1px solid #ededed;
+}
+.p-datatable .p-sortable-column .p-sortable-column-icon{
+  font-size: 12px;
+  margin-left: 0;
+  color: white;
+}
+.p-paginator{
+  border: none;
+}
+.p-paginator .p-paginator-first, .p-paginator .p-paginator-prev, .p-paginator .p-paginator-next, .p-paginator .p-paginator-last{
+  min-width: 30px!important;
+  height: 30px!important;
+}
+.p-paginator .p-paginator-pages .p-paginator-page{
+  min-width: 30px!important;
+  height: 30px!important;
+}
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #fd8309;
+  border-color: #fd8309;
+  color: #ffffff;
+}
+// table section css end
+
+.btn-danger{
+  background-color: $color_sidebar;
+    border-color: $color_sidebar;
+}
+.btn-danger:hover, .btn-danger:focus, .btn-danger:focus-visible{
+  background-color: $color_close_hover!important;
+    border-color: $color_close_hover!important;
+    box-shadow: none!important;
+}
+.btn-primary{
+  background-color: $color_save_hover;
+  border-color: $color_save_hover;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:focus-visible{
+  background-color: $color_header!important;
+  border-color: $color_header!important;
+  box-shadow: none!important;
+}
+.btn-info{
+  background-color: $color_save_hover;
+  border-color: $color_save_hover;
+  color: white;
+}
+.btn-info:hover, .btn-info:focus, .btn-info:focus-visible{
+  background-color: $color_header!important;
+  border-color: $color_header!important;
+  box-shadow: none!important;
+  color: white;
+}
+.form-control{
+  border: 1px solid black;
+}
+.form-control:focus{
+  border-color: $color_header;
+  box-shadow: 0 0 0 0.2rem rgb(253 131 9 / 16%);
+}
+
+.dropdown-item.active, .dropdown-item:active{
+  background-color: $color_sidebar;
+  color: white!important;
+}
+
+.tab-content .tab-pane{
+  padding: 14px;
+}
+.graph-action-container .dropbox{
+  padding: 0;
+}
+.graph-action-container .dropbox p{
+  background-color: black;
+  color: white;
+  padding: 7px;
+  font-weight: 500;
+}
+.sidebar .nav-dropdown-items .nav-item {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+//loader styles
+.lds-ellipsis {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 80px;
+  margin: auto;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #000;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+@media (min-width: 992px){
+.sidebar-fixed .sidebar {
+  z-index: 1000;
+}
+}
+
+.p-datatable .p-datatable-thead{
+  position: sticky!important;
+  top: 1px!important;
+}
+.p-datatable .p-datatable-thead>tr>th{
+  border: 1px solid #ededed;
+}
+
+.graph-label{
+  display: flex; 
+  flex-wrap: wrap;
+  // justify-content: space-around;
+  .label-item{
+    min-width: 30%;
+    flex: 1;
+    min-height: 150px;
+    cursor: pointer;
+    justify-content: center;
+    display: flex; 
+    flex-direction:column; 
+    align-items: center; 
+    border: 1px solid #ccc; 
+    margin: 10px;
+    padding-top: 3%; 
+    padding-bottom: 3%;
+    padding-right: 1%;
+    padding-left: 1%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #ccc;
+  }
+}
+
+::ng-deep{
+  text{
+    text-decoration: none !important;
+    color: black !important;
+  }
+}
+
+.highcharts-drilldown-axis-label{
+  text-shadow: none;
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.action-btn{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.action-btn i{
+  border: 2px solid #eee;
+  padding: 10px;
+  min-width: 38px;
+  text-align: center;
+  border-radius: 8px;
+  background: #ccc;
+  box-shadow: 2px 2px 2px #ccc;
+  margin-right: 10px;
+}
