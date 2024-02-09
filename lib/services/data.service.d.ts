@@ -1,0 +1,44 @@
+import { HttpClient } from '@angular/common/http';
+import { DataType } from '../data-types/variable-types';
+import * as i0 from "@angular/core";
+export declare class DataService {
+    private http;
+    XSIGHT_BASE_URL: any;
+    DCUTLY_BASE_URL: any;
+    MODAL_DATA: {};
+    entryMode: string;
+    authKey: string;
+    constructor(http: HttpClient);
+    setHeaders(adminId: string): {
+        version: string;
+        entrymode: string;
+        apptype: string;
+        authkey: string;
+        foAdminId: string;
+        'content-enconding': string;
+    };
+    setModalData(modalData: any): void;
+    getModalData(): {};
+    getDashboardById(dashboardId: any, adminId: string): Promise<Object>;
+    getGraphDashBoardById(data: any, adminId: string): Promise<Object>;
+    getGraphDataById(data: any): Promise<Object>;
+    getGraphDrilldownById(data: any): Promise<Object>;
+    downloadDrilldownById(data: any): import("rxjs").Observable<import("@angular/common/http").HttpEvent<Blob>>;
+    fetchDataSource(params: any, adminId: string): Promise<Object>;
+    getGraphById(widgetId: any, adminId: string): Promise<Object>;
+    createNewFormula(customVariable: any): any;
+    parseDataFormat(data: any, format: any): any[];
+    keyConverter(graphData: any, dataKeys: any, direction?: number): any;
+    getVariableData(input: any): DataType.TIME[] | DataType.DATE[] | DataType.NUMBER[] | DataType.STRING[];
+    validateTime(input: any): boolean;
+    validateNumber(e: any): boolean;
+    checkDate(input: any): boolean;
+    convertDateFormat(input: any, type: any): string | null;
+    getDecodedUrl(url: any): Promise<Object>;
+    getEncodedUrl(url: any): Promise<Object>;
+    getSharedDashboard(params: any, adminId: string): Promise<Object>;
+    getSharedBackendDashboard(params: any, adminId: string): Promise<Object>;
+    getSharedDashboardData(dashboard_id: any, adminId: string): Promise<Object>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<DataService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<DataService>;
+}

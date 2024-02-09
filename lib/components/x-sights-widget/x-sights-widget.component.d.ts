@@ -1,0 +1,32 @@
+import { DatePipe } from '@angular/common';
+import { OnInit, EventEmitter, SimpleChanges } from '@angular/core';
+import { DataService } from '../../services/data.service';
+import { XSightsCoreService } from '../../x-sights-core.service';
+import { XsightsBackendService } from '../../services/xsights-backend.service';
+import * as i0 from "@angular/core";
+export declare class XSightsWidgetComponent implements OnInit {
+    private xsights;
+    private xsightsBackend;
+    private dataService;
+    private datePipe;
+    widgetId: number;
+    graphPrefix: string;
+    startDate: any;
+    endDate: any;
+    adminId: any;
+    isLoad: boolean;
+    widgetLoaded: EventEmitter<any>;
+    graphData: any;
+    fields: any;
+    pivotTable: any;
+    structure: any;
+    constructor(xsights: XSightsCoreService, xsightsBackend: XsightsBackendService, dataService: DataService, datePipe: DatePipe);
+    ngOnInit(): void;
+    ngAfterContentInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    renderWidget(): void;
+    drawWidgetById(): Promise<unknown>;
+    buildChart(widgetData: any, data: any, tempData: any): Promise<unknown>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<XSightsWidgetComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<XSightsWidgetComponent, "x-sights-widget", never, { "widgetId": "widgetId"; "graphPrefix": "graphPrefix"; "startDate": "startDate"; "endDate": "endDate"; "adminId": "adminId"; "isLoad": "isLoad"; "graphData": "graphData"; }, { "widgetLoaded": "widgetLoaded"; }, never, never>;
+}
